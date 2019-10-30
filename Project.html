@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <p>His eyes opened, greeted by the cloudless blue sky, eyes burning from the planets, two suns. The distant crash of waves can be heard with the occasional chatter of birds.</p>
+    <div id = "story">
+
+    </div>
+    <div id = "button">
+
+    </div>
 <script>
 
  const myStory = {
@@ -15,6 +20,23 @@
          choices: ["one","two","three"]
      }
  }
+ let buttonContainer = document.getElementById('button');
+ let storyContainer = document.getElementById('story');
+
+function makeButton(){
+    let button = document.createElement('button');
+    button.innerHTML = "ahh" + choice;
+    button.addEventListener('click', function() {alert('Button was clicked')})
+    buttonContainer.appendChild(button);
+}
+function showStory(text){
+    let storyText = document.createElement('p');
+    storyText.innerText = text;
+    storyContainer.appendChild(storyText);
+}
+for(choice of myStory.intro.choices){
+    makeButton();
+}
  
 </script>
 
