@@ -16,27 +16,14 @@
 
  const myStory = {
      intro : {
-         text: "His eyes opened, greeted by the cloudless blue sky, eyes burning from the planets, two suns. The distant crash of waves can be heard with the occasional chatter of birds.",
-         choices: ["one","two","three"]
+         text: "His eyes opened, greeted by the cloudless blue sky, eyes burning from the planets, two suns. The distant crash of waves can be heard with the occasional chatter of birds.He sits up and looks around. The man was on a beach surrounded by a lush rainforest, no other people in sight. The only sign of  human life was the ships off on the horizon.He lifts himself off the ground, his entire body feeling heavy. When he tries to walk, his legs give in making him look like a newborn deer. Strange, he thought and when he tries to lift himself up again his legs don’t give out but are still threatening to buckle",
+         choices: ["Go to page 2"]
+     },
+     part2:{
+         text:""
      }
+    
  }
- let buttonContainer = document.getElementById('button');
- let storyContainer = document.getElementById('story');
-
-function makeButton(){
-    let button = document.createElement('button');
-    button.innerHTML = "ahh" + choice;
-    button.addEventListener('click', function() {alert('Button was clicked')})
-    buttonContainer.appendChild(button);
-}
-function showStory(text){
-    let storyText = document.createElement('p');
-    storyText.innerText = text;
-    storyContainer.appendChild(storyText);
-}
-for(choice of myStory.intro.choices){
-    makeButton();
-}
  
 </script>
 
