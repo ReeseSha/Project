@@ -18,6 +18,7 @@
 let storyContainer = document.getElementById("myStory");
 let buttonContainer = document.getElementById("button");
 let history = ["intro"];
+    //holds entire story and choices
  const myStory = {
      part1 : {
          text: "He sits up and looks around. The man was on a beach surrounded by a lush rainforest, no other people in sight. The only sign of  human life was the ships off on the horizon. He lifts himself off the ground, his entire body feeling heavy. When he tries to walk, his legs give in making him look like a newborn deer. Strange, he thought and when he tries to lift himself up again his legs don’t give out but are still threatening to buckle.",
@@ -28,17 +29,32 @@ let history = ["intro"];
          choices:["Got to page 3", "part3"]
      },
      part3:{
-        text:"",
+        text:"	The more he stared at himself, the more confused he became , Who am I? Where am I? Are the thoughts running through his head. He stumbled back deciding to walk far away from the water so he couldn't see himself.After walking for a while he saw a village surrounded by hundreds of ships, both large and small. The closer he got the more the village seemed to grow. It started by the shore and traveled all the way into the distant mountains. Once he was inside the town he was surrounded by the most people he had ever seen ,which currently is zero.",
         choices:[]
      },
      part4:{
-         text:"",
+         text:"The town was amazing, with multicolor clothes hanging from wires strung from open windows, merchants yelling about their newest goods, showing them off proudly, and musicians playing on lyres, lutes, and flutes. The further he walked down this street the more he realized how many eyes were on him. Whenever he turns to meet one of the villagers eyes, they turn away pretending he was never there. Maybe this is just how the local people act? He wondered to himself as he passes a window and sees his reflection. Oh yeah, the giant horn poking out of my head.",
          choices:[]
      },
-
+     part5:{
+         text:"While he was staring at himself, there was a sudden crash. When he turned he was greeted with a large group of men chasing after a younger man and woman.The young man quickly stopped and yelled, “Now!” The woman then turned and threw a small spherical object. The large group stopped in confusion, one of the members bent down to pick it up. As soon as his hand touched it, the ball exploded covering the street in a thick blue fog. When the smoke dissipated those two were gone. Leaving nothing except the smoke and the faint footprints to show they were even there. Follow them?",
+         choices:[]
+     },
+     //result of pressing no for previous decision
+     part6:{
+         text:"	After wandering around the village for nearly the entire day, he found himself by the docks. Out of the corner of his eye, he saw those two from the fight earlier in the day. They were loading a large chest onto a ship. The younger man notices his staring and approaches him.“You’re an odd looking one” He looks him up and down. “Sorry?” His voice was strained, as if he hadn’t used  it in a very long time. “Who’s this Claude?” The girl appears from inside him. The man, Claude, lightly punches her on the shoulder.“Rude” He whispers to her. Claude was shorter than him, with short black hair and dark piercing eyes. His  clothing was similar to those of a pirate and a feather on his ear. The girl was very short, about chest height on Claude. Her hair was curly brown held on top of her head with a ribbon. “So who are you and why were you staring at us?” Claude stares him dead in the eyes. “You were in the street fighting a group of men.” He states plainly.“Oh you saw that?”“Are you here to arrest us?”The girl says from behind him. “No?”He tilts his head in confusion.“Does he look like an officer Pippa?” The girl, Pippa, frowns.“You never know!”“I’m not an officer.” “See?”Claude says to her. “Anyway, who are you?”",
+        choices:[]
+     },
+     part7:""
  }
     function createButton(){
-        
+        let button =document.createElement('button');
+        button.innerHTML = btnText;
+        buttonContainer.append(button);
+        button.addEventListener("click",function(){
+            history.push(choice);
+            showstory();
+        })
  }
 </script>
 
