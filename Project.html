@@ -5,9 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kingdom of the Fae</title>
 </head>
+
 <body>
-    <p>His eyes opened, greeted by the cloudless blue sky, eyes burning from the planets, two suns. The distant crash of waves can be heard with the occasional chatter of birds. 
-        </p>
+    <div id = "intro">
+        <body style = "background-color:rgba(68, 58, 212, 0.075)">
+         <h1 style="color:darkblue">Kingdom of the Fae</h1>
+        </body>
+            <p>His eyes opened, greeted by the cloudless blue sky, eyes burning from the planets, two suns. The distant crash of waves can be heard with the occasional chatter of birds. 
+                </p>
+    </div>
+</body>
+</html>
+<p> Press button below to continue</p>
+<button>Click Here :) </button>
+<script> 
+function makeButton(){
+    var buttn = document.createElement("Button");
+    buttn.innerHTML = "Click";
+    document.body.appendChild(buttn);
+}
+</script>
+</html>
+</body>
     <div id = "story">
 
     </div>
@@ -22,65 +41,95 @@ let history = ["intro"];
  const myStory = {
      part1 : {
          text: "He sits up and looks around. The man was on a beach surrounded by a lush rainforest, no other people in sight. The only sign of  human life was the ships off on the horizon. He lifts himself off the ground, his entire body feeling heavy. When he tries to walk, his legs give in making him look like a newborn deer. Strange, he thought and when he tries to lift himself up again his legs don’t give out but are still threatening to buckle.",
-         choices: ["Go to page 2", "part2"]
+         choices: [
+         ["Go to page 2", "part2"]
+         ]
      },
      part2:{
          text:"He walks along the waves watching them bring in small creatures and pulling them back to sea. For a brief moment when the waves come in enough to see his reflection, he realises he doesn’t recognize it. How could I not know my own reflection? he thinks walking quickly to the water to get a better look at himself. He was tall, probably an entire head taller than the average man. His hair was a pure white reaching down to the middle of his back, covered in tangles and sand. The man was tanned and covered in white freckles shining like diamonds. The most peculiar thing about him was a large horn protruding from his forehead. It was a pale blue also covered in the shining specks.",
-         choices:["Got to page 3", "part3"]
+         choices:[
+         ["Got to page 3", "part3"]
+         ]
      },
      part3:{
         text:"	The more he stared at himself, the more confused he became , Who am I? Where am I? Are the thoughts running through his head. He stumbled back deciding to walk far away from the water so he couldn't see himself.After walking for a while he saw a village surrounded by hundreds of ships, both large and small. The closer he got the more the village seemed to grow. It started by the shore and traveled all the way into the distant mountains. Once he was inside the town he was surrounded by the most people he had ever seen ,which currently is zero.",
-        choices:[]
+        choices:[
+        ["go to page 3", "part4"]
+        ]
      },
      part4:{
          text:"The town was amazing, with multicolor clothes hanging from wires strung from open windows, merchants yelling about their newest goods, showing them off proudly, and musicians playing on lyres, lutes, and flutes. The further he walked down this street the more he realized how many eyes were on him. Whenever he turns to meet one of the villagers eyes, they turn away pretending he was never there. Maybe this is just how the local people act? He wondered to himself as he passes a window and sees his reflection. Oh yeah, the giant horn poking out of my head.",
-         choices:[]
+         choices:[
+         ["go to page 5", "part5"]
+         ]
      },
      part5:{
          text:"While he was staring at himself, there was a sudden crash. When he turned he was greeted with a large group of men chasing after a younger man and woman.The young man quickly stopped and yelled, “Now!” The woman then turned and threw a small spherical object. The large group stopped in confusion, one of the members bent down to pick it up. As soon as his hand touched it, the ball exploded covering the street in a thick blue fog. When the smoke dissipated those two were gone. Leaving nothing except the smoke and the faint footprints to show they were even there. Follow them?",
-         choices:[]
+         choice:[
+                ["yes",""],
+                ["no", "part6"]
+                ]
          //need yes for the action
      },
      //result of pressing no for previous decision
      part6:{
          text:"	After wandering around the village for nearly the entire day, he found himself by the docks. Out of the corner of his eye, he saw those two from the fight earlier in the day. They were loading a large chest onto a ship. The younger man notices his staring and approaches him.“You’re an odd looking one” He looks him up and down. “Sorry?” His voice was strained, as if he hadn’t used  it in a very long time. “Who’s this Claude?” The girl appears from inside him. The man, Claude, lightly punches her on the shoulder.“Rude” He whispers to her. Claude was shorter than him, with short black hair and dark piercing eyes. His  clothing was similar to those of a pirate and a feather on his ear. The girl was very short, about chest height on Claude. Her hair was curly brown held on top of her head with a ribbon. “So who are you and why were you staring at us?” Claude stares him dead in the eyes. “You were in the street fighting a group of men.” He states plainly.“Oh you saw that?”“Are you here to arrest us?”The girl says from behind him. “No?”He tilts his head in confusion.“Does he look like an officer Pippa?” The girl, Pippa, frowns.“You never know!”“I’m not an officer.” “See?”Claude says to her. “Anyway, who are you?”",
-        choices:[]
+        choices:[
+            ["go to page 7", "part7"]
+        ]
      },
      part7:{
          text:"He thinks for a second, and realises he’s not sure who he is.          Whenever he thinks about his past it all comes back blank. Like he never existed before now. “I’m not sure.” He says questioning himself.“You what?”  Pippa questioned.“You really are an odd one aren’t you?” Claude said in an almost amused tone. He feels himself caving in on himself out of mbarrassment. “Claude, he should stay with us!”Pippa exclaimed.“Might as well, to be honest I’m rather intrigued by you.” His eyes pierce through his skin. Join them?",
-     choices:[]
+     choices:[
+         ["yes","part8"],
+         ["no",""]
+     ]
      //need no for the option
      },
      part8:{
          //yes option for part 7
          text:"“Now who might this be?’ She asks.“That's the question of the night.” Claude appeared from behind him. She nodded in understanding. “So what’s our next mission?”“There have been reports of people going into a cave in Enbarr and never returning.”“So what do you think it is?” Pippa appears with a mouthful of food.“Probably one of those rock creatures.” Claude answers.“Rock creatures?” The horned man asks.“They are creatures found in most caves that feed off of small animals, but on rare occasions some will eat human flesh.” The older woman still stares at him intently. What should he do?",
-         choices:[]
+         choices:[
+             ["Go below deck", "part9"],
+             ["Talk to Claude", ""],
+             ["Talk to Pippa",""]
+         ]
             //need talk to Claude/Pippa
      },
      part9:{
          //go below deck
          text:"“Anyway it's getting pretty dark out, I think it's time to hit the hay.” Claude puts a hand on his shoulder motioning to follow him. He nods and follow him under the deck. There he finds a small room with four cots and crates full of food supplies and weapons. Claude leads him to a cot.“You can stay in this one, I’ll be on the deck if you need me.” With that he is left alone. He sits down on the cot staring at the ceiling. He feels his eyes getting heavier until his hands find something in his pocket. A letter folder into a small square, he opens it finding an elegant cursive decorating it, reading,To my dear Avalon,If you are reading this something has happened to me. Find your father, he will help you. He is located in the kingdom of the Fae, once you are there tell him of my fate and he will give you refuge. You must find him for your safety, you are more important than you realize my child. I will always love you.Sincerely your mother, Ophelia.",
-         choice:[]
+         choice:[
+             ["go to page 10", "part10"]
+         ]
      },
      part10:{
          //sleepy time
          text:"A Million other thoughts race through his brain, his eyes slowly shutting until he falls into a deep sleep.",
-         choice:[]
+         choice:[
+             ["go to page 11","part11"]
+         ]
      },
      part11:{
          //wakey wakey for read letter
         text:"	He wakes up the next day, the sun shining through the boards of the deck into his face. Directly in front of him is Pippa, staring intently at him. “You slept for a long time! I was getting worried there, thought you died or something.” She states in a sing songy voice.“Avalon.” He blurts out.“Huh?”“My name is Avalon.”“Woah did you get your memories back! I have so many questions, where did you come from? Why do you have that horn on your head? I didn't mention it before ‘cause I didn’t want to be rude!”“My mother wrote me a letter. That's how I knew my name.”“So you didn’t get your memories back? That sucks.” She pouts. “Anyway we are almost in Enbarr hurry and get up.” She yells running up to the deck. Once he fully wakes up, Avalon makes his way onto the deck. He is greeted with a view of a city more beautiful than the village they were in previously. The buildings were a pure white stretching high into the sky, surrounded by the vast ocean.  Claude notices him, “Oh you're awake.” “This is Enbarr?” Avalon asks. “Yep, often called the most beautiful city in Oblein.”",
-        choice:[]
+        choice:[
+            ["next page","part13"]
+        ]
      },
      part12:{
          //wakes up no letter
          text:"He wakes up the next day, the sun shining through the boards of the deck into his face. Directly in front of him is Pippa, staring intently at him. “You slept for a long time! I was getting worried there, thought you died or something.” She states in a sing songy voice.Once he fully wakes up, he makes his way onto the deck. He is greeted with a view of a city more beautiful than the village they were in previously. The buildings were a pure white stretching high into the sky, surrounded by the vast ocean.  Claude notices him, “Oh you're awake.” “This is Enbarr?” He asks. “Yep, often called the most beautiful city in Oblein.”",
-         choice:[]
+         choice:[
+             ["next page","part13"]
+         ]
      },
      part13:{
          //argue with man prompt
          text:"	Once they get to the docks, the older woman, who he learned was named Nueleth guided them to an inn where their employer was meeting them. Once inside the inn, it was bustling with people eating and drinking. Pippa tugged on his sleeve breaking him out of his rapid stream of thoughts. Claude and Nueleth were already seated by a tall scruffy man covered in scars. He approaches them hearing part of their conversation. “I’ll give you 200 gold for destroying those things, but no higher.” He argues.“But you promised at least 350!” Claude yells. Argue with the man?",
-         choice:[]
+         choice:[
+             []
+         ]
          //need argue choice
      },
      part14:{
@@ -112,14 +161,9 @@ let history = ["intro"];
      },
 }
     function createButton(){
-        let button =document.createElement('button');
-        button.innerHTML = btnText;
-        buttonContainer.append(button);
-        button.addEventListener("click",function(){
-            history.push(choice);
-            showstory();
-        })
- }
+        
+    }
+showStory();
 </script>
 
 </body>
