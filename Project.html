@@ -10,164 +10,271 @@
     <div id = "intro">
         <body style = "background-color:rgba(68, 58, 212, 0.075)">
          <h1 style="color:darkblue">Kingdom of the Fae</h1>
-        </body>
             <p>His eyes opened, greeted by the cloudless blue sky, eyes burning from the planets, two suns. The distant crash of waves can be heard with the occasional chatter of birds. 
                 </p>
     </div>
-</body>
-</html>
-<p> Press button below to continue</p>
-<button>Click Here :) </button>
-<script> 
-function makeButton(){
-    var buttn = document.createElement("Button");
-    buttn.innerHTML = "Click";
-    document.body.appendChild(buttn);
-}
-</script>
-</html>
-</body>
-    <div id = "story">
 
+    <div id="story">
     </div>
-    <div id = "button">
+    
+    <div id="buttons">
+    </div>
+        
+    <script>
+    let storyBody = document.getElementById("story");
+    
+    let buttonBody = document.getElementById("buttons");
+  
+    let history = ["intro"];
 
-    </div>
-<script>
-let storyContainer = document.getElementById("myStory");
-let buttonContainer = document.getElementById("button");
-let history = ["intro"];
-    //holds entire story and choices
- const myStory = {
-     part1 : {
-         text: "He sits up and looks around. The man was on a beach surrounded by a lush rainforest, no other people in sight. The only sign of  human life was the ships off on the horizon. He lifts himself off the ground, his entire body feeling heavy. When he tries to walk, his legs give in making him look like a newborn deer. Strange, he thought and when he tries to lift himself up again his legs don’t give out but are still threatening to buckle.",
-         choices: [
-         ["Go to page 2", "part2"]
+    const story = {
+        intro : {
+         text : "He sits up and looks around. The man was on a beach surrounded by a lush rainforest, no other people in sight. The only sign of  human life was the ships off on the horizon. He lifts himself off the ground, his entire body feeling heavy. When he tries to walk, his legs give in making him look like a newborn deer. Strange, he thought and when he tries to lift himself up again his legs don\’t give out but are still threatening to buckle.",
+         choices : [
+         ["Next Page", "part2"]
          ]
      },
-     part2:{
-         text:"He walks along the waves watching them bring in small creatures and pulling them back to sea. For a brief moment when the waves come in enough to see his reflection, he realises he doesn’t recognize it. How could I not know my own reflection? he thinks walking quickly to the water to get a better look at himself. He was tall, probably an entire head taller than the average man. His hair was a pure white reaching down to the middle of his back, covered in tangles and sand. The man was tanned and covered in white freckles shining like diamonds. The most peculiar thing about him was a large horn protruding from his forehead. It was a pale blue also covered in the shining specks.",
-         choices:[
-         ["Got to page 3", "part3"]
+
+     part2 : {
+         text : "He walks along the waves watching them bring in small creatures and pulling them back to sea. For a brief moment when the waves come in enough to see his reflection, he realises he doesn\’t recognize it. How could I not know my own reflection? he thinks walking quickly to the water to get a better look at himself. He was tall, probably an entire head taller than the average man. His hair was a pure white reaching down to the middle of his back, covered in tangles and sand. The man was tanned and covered in white freckles shining like diamonds. The most peculiar thing about him was a large horn protruding from his forehead. It was a pale blue also covered in the shining specks.",
+         choices : [
+         ["Next page", "part3"]
          ]
      },
-     part3:{
-        text:"	The more he stared at himself, the more confused he became , Who am I? Where am I? Are the thoughts running through his head. He stumbled back deciding to walk far away from the water so he couldn't see himself.After walking for a while he saw a village surrounded by hundreds of ships, both large and small. The closer he got the more the village seemed to grow. It started by the shore and traveled all the way into the distant mountains. Once he was inside the town he was surrounded by the most people he had ever seen ,which currently is zero.",
-        choices:[
-        ["go to page 3", "part4"]
+
+     part3 : {
+        text : "The more he stared at himself, the more confused he became , Who am I? Where am I? Are the thoughts running through his head. He stumbled back deciding to walk far away from the water so he couldn\'t see himself. After walking for a while he saw a village surrounded by hundreds of ships, both large and small. The closer he got the more the village seemed to grow. It started by the shore and traveled all the way into the distant mountains. Once he was inside the town he was surrounded by the most people he had ever seen ,which currently is zero.",
+        choices : [
+        ["Next page", "part4"]
         ]
      },
-     part4:{
-         text:"The town was amazing, with multicolor clothes hanging from wires strung from open windows, merchants yelling about their newest goods, showing them off proudly, and musicians playing on lyres, lutes, and flutes. The further he walked down this street the more he realized how many eyes were on him. Whenever he turns to meet one of the villagers eyes, they turn away pretending he was never there. Maybe this is just how the local people act? He wondered to himself as he passes a window and sees his reflection. Oh yeah, the giant horn poking out of my head.",
-         choices:[
-         ["go to page 5", "part5"]
+
+     part4 : {
+         text : "The town was amazing, with multicolor clothes hanging from wires strung from open windows, merchants yelling about their newest goods, showing them off proudly, and musicians playing on lyres, lutes, and flutes. The further he walked down this street the more he realized how many eyes were on him. Whenever he turns to meet one of the villagers eyes, they turn away pretending he was never there. Maybe this is just how the local people act? He wondered to himself as he passes a window and sees his reflection. Oh yeah, the giant horn poking out of my head.",
+         choices : [
+         ["Next page", "part5"]
          ]
      },
-     part5:{
-         text:"While he was staring at himself, there was a sudden crash. When he turned he was greeted with a large group of men chasing after a younger man and woman.The young man quickly stopped and yelled, “Now!” The woman then turned and threw a small spherical object. The large group stopped in confusion, one of the members bent down to pick it up. As soon as his hand touched it, the ball exploded covering the street in a thick blue fog. When the smoke dissipated those two were gone. Leaving nothing except the smoke and the faint footprints to show they were even there. Follow them?",
-         choice:[
-                ["yes",""],
+
+     part5 : {
+         text : "While he was staring at himself, there was a sudden crash. When he turned he was greeted with a large group of men chasing after a younger man and woman.The young man quickly stopped and yelled, \“Now!\” The woman then turned and threw a small spherical object. The large group stopped in confusion, one of the members bent down to pick it up. As soon as his hand touched it, the ball exploded covering the street in a thick blue fog. When the smoke dissipated those two were gone. Leaving nothing except the smoke and the faint footprints to show they were even there. Follow them?",
+         choices : [
+                ["yes", "part20"],
                 ["no", "part6"]
                 ]
-         //need yes for the action
      },
+
+     part20 : {
+         //yes option
+         text : "He follows the footprints left by the pair, which leads him to the docks. Out of the corner of his eye, he saw those two from the fight earlier in the day. They were loading a large chest onto a ship. The younger man notices his staring and approaches him.\“You\’re an odd looking one\” He looks him up and down. \“Sorry?\” His voice was strained, as if he hadn\’t used  it in a very long time. \“Who\’s this Claude?\” The girl appears from inside him. The man, Claude, lightly punches her on the shoulder.\“Rude\” He whispers to her. Claude was shorter than him, with short black hair and dark piercing eyes. His  clothing was similar to those of a pirate and a feather on his ear. The girl was very short, about chest height on Claude. Her hair was curly brown held on top of her head with a ribbon. \“So who are you and why were you staring at us?\” Claude stares him dead in the eyes. \“You were in the street fighting a group of men.\” He states plainly.\“Oh you saw that?\”\
+         “Are you here to arrest us?\”The girl says from behind him. \“No?\”He tilts his head in confusion.\“Does he look like an officer Pippa?\” The girl, Pippa, frowns.\“You never know!\”\“I\’m not an officer.\” \“See?\”Claude says to her. \“Anyway, who are you?\”",
+         choices : [
+             ["Next page", "part7"]
+         ]
+     },
+
      //result of pressing no for previous decision
-     part6:{
-         text:"	After wandering around the village for nearly the entire day, he found himself by the docks. Out of the corner of his eye, he saw those two from the fight earlier in the day. They were loading a large chest onto a ship. The younger man notices his staring and approaches him.“You’re an odd looking one” He looks him up and down. “Sorry?” His voice was strained, as if he hadn’t used  it in a very long time. “Who’s this Claude?” The girl appears from inside him. The man, Claude, lightly punches her on the shoulder.“Rude” He whispers to her. Claude was shorter than him, with short black hair and dark piercing eyes. His  clothing was similar to those of a pirate and a feather on his ear. The girl was very short, about chest height on Claude. Her hair was curly brown held on top of her head with a ribbon. “So who are you and why were you staring at us?” Claude stares him dead in the eyes. “You were in the street fighting a group of men.” He states plainly.“Oh you saw that?”“Are you here to arrest us?”The girl says from behind him. “No?”He tilts his head in confusion.“Does he look like an officer Pippa?” The girl, Pippa, frowns.“You never know!”“I’m not an officer.” “See?”Claude says to her. “Anyway, who are you?”",
-        choices:[
-            ["go to page 7", "part7"]
+     part6 : {
+         text : "   After wandering around the village for nearly the entire day, he found himself by the docks. Out of the corner of his eye, he saw those two from the fight earlier in the day. They were loading a large chest onto a ship. The younger man notices his staring and approaches him.\“You\’re an odd looking one\” He looks him up and down. \“Sorry?\” His voice was strained, as if he hadn\’t used  it in a very long time. \“Who\’s this Claude?\” The girl appears from inside him. The man, Claude, lightly punches her on the shoulder.\“Rude\” He whispers to her. Claude was shorter than him, with short black hair and dark piercing eyes. His clothing was similar to those of a pirate and a feather on his ear. The girl was very short, about chest height on Claude. Her hair was curly brown held on top of her head with a ribbon. \“So who are you and why were you staring at us?\” Claude stares him dead in the eyes. \“You were in the street fighting a group of men.\” He states plainly.\“Oh you saw that?\”\“Are you here to arrest us?\”The girl says from behind him. \“No?\”He tilts his head in confusion.\“Does he look like an officer Pippa?\” The girl, Pippa, frowns.\“You never know!\”\“I\’m not an officer.\” \“See?\”Claude says to her. \“Anyway, who are you?\”",
+        choices : [
+            ["Next page", "part7"]
         ]
      },
-     part7:{
-         text:"He thinks for a second, and realises he’s not sure who he is.          Whenever he thinks about his past it all comes back blank. Like he never existed before now. “I’m not sure.” He says questioning himself.“You what?”  Pippa questioned.“You really are an odd one aren’t you?” Claude said in an almost amused tone. He feels himself caving in on himself out of mbarrassment. “Claude, he should stay with us!”Pippa exclaimed.“Might as well, to be honest I’m rather intrigued by you.” His eyes pierce through his skin. Join them?",
-     choices:[
-         ["yes","part8"],
-         ["no",""]
-     ]
-     //need no for the option
+
+     part7 : {
+         text : "He thinks for a second, and realises he\’s not sure who he is.Whenever he thinks about his past it all comes back blank. Like he never existed before now. \“I\’m not sure.\” He says questioning himself.\“You what?\”  Pippa questioned.\“You really are an odd one aren\’t you?\” Claude said in an almost amused tone. He feels himself caving in on himself out of mbarrassment. \“Claude, he should stay with us!\”Pippa exclaimed.\“Might as well, to be honest I\’m rather intrigued by you.\” His eyes pierce through his skin. Join them?",
+     choices : [
+         ["yes", "part8"],
+         ["no", "part21"]
+        ]
      },
-     part8:{
-         //yes option for part 7
-         text:"“Now who might this be?’ She asks.“That's the question of the night.” Claude appeared from behind him. She nodded in understanding. “So what’s our next mission?”“There have been reports of people going into a cave in Enbarr and never returning.”“So what do you think it is?” Pippa appears with a mouthful of food.“Probably one of those rock creatures.” Claude answers.“Rock creatures?” The horned man asks.“They are creatures found in most caves that feed off of small animals, but on rare occasions some will eat human flesh.” The older woman still stares at him intently. What should he do?",
-         choices:[
-             ["Go below deck", "part9"],
-             ["Talk to Claude", ""],
-             ["Talk to Pippa",""]
+
+     //no
+     part21 : {
+         text : "The crew stares at him, their stares growing more hostile. A mysterious woman descends from the ship a pipe in hand. Before he can run away he is the over the head by the woman. The world slowly starts to go black. When his eyes open, he is greeted by the smell of damp wood and the steel bars of a jail cell. What will he do?",
+         choices : [
+             ["wait", "part22"],
+             ["look for escape", "part29"]
          ]
-            //need talk to Claude/Pippa
      },
-     part9:{
+
+     part22 : {
+         //wait
+        text : "He waits and wait but no one comes. Eventually he feels his eyes growing heavier until he falls into a deep sleep",
+        choices : [
+            ["Next page", "part29"]
+        ]
+     },
+
+     part29 : {
+         //look for escape
+         text : "He looks around seeing a key right outside the cell and a crow bar.",
+         choices : [
+             ["Grab the key", "part24"],
+             ["Grab the crowbar", "part23"]
+         ]
+     },
+
+     part23 : {
+         //crowbar
+        text : "When he grabs the crowbar, it hits the bars making a loud noise. He jumps as a result dropping the tool creating even more noise until he hears footsteps grow closer.\"So you\'re trying to escape huh?\"\"Claude says his voice full of hostility.\'\'I don\'t take kindly to this sort of thing.\'In the blink of an eye, he whips out a pistol hidden in his pocket, firing at him. The last thing he felt was the searing pain and laughter from the man who fired.",
+          choices : [
+              ["Restart?", "intro"]
+              //end
+          ]
+     },
+
+     part24 : {
+         //key
+        text : "He grabs the key and puts it in the key hole. He tried to turn it but it won\'t budge. He tries and tries to turn the key but nothing. He suddenly hears foot steps getting closer to him and he tries to open the door again, and still nothing. The mysterious woman who knocked him out appears.\'Trying to escape are we?\'She grabs the key from his hand and throws it to the opposite side of the room.",
+        choices : [
+            ["Tell the truth", "part25"],
+            ["Lie", "part26"]
+        ]
+ 
+     },
+     part25 : {
+         //truth
+        text : "\'I was trying to escape\' He states staring blankly into her eyes. \'I see\' her voice was void of emotion but her eyes were burning with rage. \'I\'ve been wanting to do this for years\' She raises her hand toward him.\'Say goodbye\'",
+        choices : [
+            ["Restart?", "intro"]
+            //end
+        ]
+     },
+     part26 : {
+         //lie
+        text : "\'The key fell\' He says feeling his hands start to tremble. She scans his body for any signs of lying. When she could not find anything, she opens the door and turns to leave. \'Don\'t try anything funny",
+        choices : [
+            ["next page", "part12"]
+        ]
+     },
+     part8 : {
+         //yes option for part 7
+         text : "\'Now who might this be?\’ She asks.\'That\'s the question of the night.\' Claude appeared from behind him. She nodded in understanding. \'So what\’s our next mission?\'There have been reports of people going into a cave in Enbarr and never returning.\'So what do you think it is?\' Pippa appears with a mouthful of food.\' Probably one of those rock creatures.\'Claude answers.\'Rock creatures?\' The horned man asks.\'They are creatures found in most caves that feed off of small animals, but on rare occasions some will eat human flesh.\' The older woman still stares at him intently.",
+         choices : [
+             ["Go below deck", "part9"]
+            ]
+     },
+     part9 : {
          //go below deck
-         text:"“Anyway it's getting pretty dark out, I think it's time to hit the hay.” Claude puts a hand on his shoulder motioning to follow him. He nods and follow him under the deck. There he finds a small room with four cots and crates full of food supplies and weapons. Claude leads him to a cot.“You can stay in this one, I’ll be on the deck if you need me.” With that he is left alone. He sits down on the cot staring at the ceiling. He feels his eyes getting heavier until his hands find something in his pocket. A letter folder into a small square, he opens it finding an elegant cursive decorating it, reading,To my dear Avalon,If you are reading this something has happened to me. Find your father, he will help you. He is located in the kingdom of the Fae, once you are there tell him of my fate and he will give you refuge. You must find him for your safety, you are more important than you realize my child. I will always love you.Sincerely your mother, Ophelia.",
-         choice:[
+         text : "\'Anyway it\'s getting pretty dark out, I think it\'s time to hit the hay.\' Claude puts a hand on his shoulder motioning to follow him. He nods and follow him under the deck. There he finds a small room with four cots and crates full of food supplies and weapons. Claude leads him to a cot.\'You can stay in this one, I\’ll be on the deck if you need me.\' With that he is left alone. He sits down on the cot staring at the ceiling. He feels his eyes getting heavier until his hands find something in his pocket. A letter folder into a small square, he opens it finding an elegant cursive decorating it, reading,To my dear Avalon,If you are reading this something has happened to me. Find your father, he will help you. He is located in the kingdom of the Fae, once you are there tell him of my fate and he will give you refuge. You must find him for your safety, you are more important than you realize my child. I will always love you.Sincerely your mother, Ophelia.",
+         choices : [
              ["go to page 10", "part10"]
          ]
      },
-     part10:{
+     part10 : {
          //sleepy time
-         text:"A Million other thoughts race through his brain, his eyes slowly shutting until he falls into a deep sleep.",
-         choice:[
-             ["go to page 11","part11"]
+         text : "A Million other thoughts race through his brain, his eyes slowly shutting until he falls into a deep sleep.",
+         choices : [
+             ["go to page 11", "part11"]
          ]
      },
-     part11:{
+
+     part11 : {
          //wakey wakey for read letter
-        text:"	He wakes up the next day, the sun shining through the boards of the deck into his face. Directly in front of him is Pippa, staring intently at him. “You slept for a long time! I was getting worried there, thought you died or something.” She states in a sing songy voice.“Avalon.” He blurts out.“Huh?”“My name is Avalon.”“Woah did you get your memories back! I have so many questions, where did you come from? Why do you have that horn on your head? I didn't mention it before ‘cause I didn’t want to be rude!”“My mother wrote me a letter. That's how I knew my name.”“So you didn’t get your memories back? That sucks.” She pouts. “Anyway we are almost in Enbarr hurry and get up.” She yells running up to the deck. Once he fully wakes up, Avalon makes his way onto the deck. He is greeted with a view of a city more beautiful than the village they were in previously. The buildings were a pure white stretching high into the sky, surrounded by the vast ocean.  Claude notices him, “Oh you're awake.” “This is Enbarr?” Avalon asks. “Yep, often called the most beautiful city in Oblein.”",
-        choice:[
-            ["next page","part13"]
+        text : "He wakes up the next day, the sun shining through the boards of the deck into his face. Directly in front of him is Pippa, staring intently at him. \“You slept for a long time! I was getting worried there, thought you died or something\.” She states in a sing songy voice.\“Avalon.\” He blurts out.\“Huh\?”\“My name is Avalon.\”\“Woah did you get your memories back! I have so many questions, where did you come from? Why do you have that horn on your head? I didn\'t mention it before \‘cause I didn\’t want to be rude!\”\“My mother wrote me a letter. That\'s how I knew my name.\”\“So you didn\’t get your memories back? That sucks.\” She pouts. \“Anyway we are almost in Enbarr hurry and get up.\” She yells running up to the deck. Once he fully wakes up, Avalon makes his way onto the deck. He is greeted with a view of a city more beautiful than the village they were in previously. The buildings were a pure white stretching high into the sky, surrounded by the vast ocean.  Claude notices him,\“Oh you\'re awake.\” \“This is Enbarr?\” Avalon asks. \“Yep, often called the most beautiful city in Oblein.\”",
+        choices : [
+            ["next page", "part13"]
         ]
      },
-     part12:{
-         //wakes up no letter
-         text:"He wakes up the next day, the sun shining through the boards of the deck into his face. Directly in front of him is Pippa, staring intently at him. “You slept for a long time! I was getting worried there, thought you died or something.” She states in a sing songy voice.Once he fully wakes up, he makes his way onto the deck. He is greeted with a view of a city more beautiful than the village they were in previously. The buildings were a pure white stretching high into the sky, surrounded by the vast ocean.  Claude notices him, “Oh you're awake.” “This is Enbarr?” He asks. “Yep, often called the most beautiful city in Oblein.”",
-         choice:[
-             ["next page","part13"]
-         ]
-     },
-     part13:{
+
+     part13 : {
          //argue with man prompt
-         text:"	Once they get to the docks, the older woman, who he learned was named Nueleth guided them to an inn where their employer was meeting them. Once inside the inn, it was bustling with people eating and drinking. Pippa tugged on his sleeve breaking him out of his rapid stream of thoughts. Claude and Nueleth were already seated by a tall scruffy man covered in scars. He approaches them hearing part of their conversation. “I’ll give you 200 gold for destroying those things, but no higher.” He argues.“But you promised at least 350!” Claude yells. Argue with the man?",
-         choice:[
-             []
+         text : "Once they get to the docks, the older woman, who he learned was named Nueleth guided them to an inn where their employer was meeting them. Once inside the inn, it was bustling with people eating and drinking. Pippa tugged on his sleeve breaking him out of his rapid stream of thoughts. Claude and Nueleth were already seated by a tall scruffy man covered in scars. He approaches them hearing part of their conversation. \“I\’ll give you 200 gold for destroying those things, but no higher.\” He argues.\“But you promised at least 350!\” Claude yells. \“Hush Claude, we will take your offer.\” Nueleth responds. \“Now we must take our leave.\” \“But!\” She only glared at him getting up to leave the inn. Pippa puts a reassuring hand on his shoulder.",
+         //finish
+         choices : [
+             ["Next page", "part15"]
+         ]   
+     },
+
+     part15 : {
+         text : "The group later finds themselves at the entrance to the cave. \“So this is it?\” Pippa asks. \“Its creepy.\”\“You\’re just scared.\” Claude teased. She punched his shoulder hard making him stumble back a bit. \“Enough you two, this is extremely dangerous.\” Nueleth orders looking at Avalon. \“You don’t have to follow us, it\’s not safe.\”\“I\’m aware, but I feel like I have to. Something in there might be a clue to who I am.\” She sighs, \“Fine then, you three go ahead I must take care of something quickly.\” The three listen to her orders and make their way inside. It\’s extremely dark with the only light source being the entrance to the cave.",
+         choices : [
+             ["Next page", "part16"]
          ]
-         //need argue choice
      },
-     part14:{
-         //no argue option
-         text:"",
 
+     part16 : {
+         text : "\“Avalon!\” A voice says from the entrance to the cave. When they all look up to see Nueleth. \“You\’re father is a monster! He is the reason my entire village was killed. You must pay for his crimes.\” Her hand raises toward the roof of the cave. \“Now die.\” A brilliant stream of white light escapes from her palm hitting the roof of the cave causing it to collapse covering the entrance. \“No!\” Pippa screams but it\’s too late they are trapped. The entire cave is pitch dark except for one thing, the horn on the top of Avalon\’s head. It glows a pale blue illuminating the area around them. \“I\’m so sorry-\“He is cut off by Claude.\“I don\’t want to hear your excuses until we find a way out of this cave.\” His voice hostile. Pippa puts a hand on Avalon\’s shoulder to console him. Suddenly the loose rocks started to float toward one spot outside of the illuminated area.",
+         choices : [
+             ["Next page", "part17"]
+         ]
      },
-     part15:{
-         text:"The group later finds themselves at the entrance to the cave. “So this is it?” Pippa asks. “Its creepy.”“You’re just scared.” Claude teased. She punched his shoulder hard making him stumble back a bit. “Enough you two, this is extremely dangerous.” Nueleth orders looking at Avalon. “You don’t have to follow us, it’s not safe.”“I’m aware, but I feel like I have to. Something in there might be a clue to who I am.” She sighs, “Fine then, you three go ahead I must take care of something quickly.” The three listen to her orders and make their way inside. It’s extremely dark with the only light source being the entrance to the cave.",
-         choice:[]
+
+     part17 : {
+         //Change below options
+         text : "\“Uh oh.\” In front of them was a 10 foot tall being made entirely out of rock. It slowly raises its fist.\“Watch out!\” Claude yells pushing Avalon and Pippa out of the way. The creatures hand hits the ground crushing the hard stone beneath it.Claude quickly removes his sword from his hips. \“Pippa do you still have those bombs on you?\” He yells. She rustles around in a pouch on her hip grabbing two of the bombs. \“ I only have two left!\” \“Then we better make them count! When I say go throw them at that thing.\” He slashes at it with his sword, it breaking upon impact. What will he do?",
+         choices : [
+             ["throw rock", "part18"],
+             ["call Pippa", "part30"],
+             ["call Claude", "part31"]
+         ]
      },
-     part16:{
-         text:"    “Avalon!” A voice says from the entrance to the cave. When they all look up to see Nueleth. “You’re father is a monster! He is the reason my entire village was killed. You must pay for his crimes.” Her hand raises toward the roof of the cave. “Now die.” A brilliant stream of white light escapes from her palm hitting the roof of the cave causing it to collapse covering the entrance. “No!” Pippa screams but it’s too late they are trapped. The entire cave is pitch dark except for one thing, the horn on the top of Avalon’s head. It glows a pale blue illuminating the area around them. “I’m so sorry-“He is cut off by Claude.“I don’t want to hear your excuses until we find a way out of this cave.” His voice hostile. Pippa puts a hand on Avalon’s shoulder to console him. Suddenly the loose rocks started to float toward one spot outside of the illuminated area.",
-         choice:[]
+
+     part30 : {
+         //help pippa
+         text : "\"Pippa!\" He yells. She comes to his aid, standing at his side. But as soon as she does, the monster shifts its attention to only Claude. It raises it\'s large fists down above him, Claude doesn't have enough time to dodge and is crushed by the blow. \"Claude!\" They both scream. In a blind rage Pippa starts to throw her bombs at the monster until it eventually falls. She stares at the place Claude\'s body was resting. Avalon puts a reasurring hand on her shoulder. \"This is your fault!\" Pippa screams punching him over and over. She screams at him and falls to her knees. The only sound heard was the caves echoed crys.",
+         choices : [
+             ["Restart?", "intro"]
+         ]
      },
-     part17:{
-         text:"“Uh oh.” In front of them was a 10 foot tall being made entirely out of rock. It slowly raises its fist.“Watch out!” Claude yells pushing Avalon and Pippa out of the way. The creatures hand hits the ground crushing the hard stone beneath it.Claude quickly removes his sword from his hips. “Pippa do you still have those bombs on you?” He yells.She rustles around in a pouch on her hip grabbing two of the bombs. “ I only have two left!” “Then we better make them count! When I say go throw them at that thing.” He slashes at it with his sword, it breaking upon impact.What will he do?",
-         choice:[]
+ 
+     part31 : {
+         //call Claude
+         text : "\"Claude!\" Avalon yells. In an instant Claude comes to his side knocking him out of the way of the monsters next blow. The rock being then turns it\'s attention away from the two onto Pippa. She grabs one of her bombs from her bag to throw. But before she can the monster raises it\'s fist and slams her into the cave\'s wall. \"Pippa!\" Avalon screams. In an instant Claude rushes over and grabs Pippa\'s dropped bomb, throwing it at the monster. The rock creature falls, never to move again. \"Claude?\" Avalon approaches him. \"I\'m fine.\" He says facing away from the other man. His grip on his sword grows tighter. \"I\'m fine...\" He says again. Avalon moves toward him finally getting a good look at his face. Claude has tears streaming down his face, making his eyes look like waterfalls. \"Pippa, I\'m so sorry.\"",
+         choices : [
+             ["Restart?", "intro"]
+         ]
      },
-     part18:{
+     part18 : {
          //throw rock option
-         text:"Avalon looks around for a way he can help. He picks up a small rock and throws it at the monster, it merely bouncing off. That got its attention turning around to face him.“Go!” Claude yells. Pippa takes a bomb and throws it into the backside of its neck exploding. The monster stays still for a moment then falls into a pile of rubble. They all take a moment to catch their breaths when something catches Avalon’s eye.",
-         choice:[]
+         text : "Avalon looks around for a way he can help. He picks up a small rock and throws it at the monster, it merely bouncing off. That got its attention turning around to face him.\“Go!\” Claude yells. Pippa takes a bomb and throws it into the backside of its neck exploding. The monster stays still for a moment then falls into a pile of rubble. They all take a moment to catch their breaths when something catches Avalon\’s eye.",
+         choices : [
+             ["Next page", "part19"]
+         ]
      },
-     part19:{
-         //throwrock part 2
-         text:" It’s a small silver bell with the engraving Wielded only by those born of the fae. Before anyone else can see it he shoves into his pocket. He heard a loud boom from the entrance to the cave. He turns to see Pippa using the last bomb to clear the entrance to the cave, light flooding in.  Claude walks over to him. “ You have a lot of explaining to do.”",
-         choice:[]
-     },
-}
-    function createButton(){
-        
-    }
-showStory();
-</script>
 
-</body>
-</html>
+     part19 : {
+         //throwrock part 2
+         text : " It\’s a small silver bell with the engraving Wielded only by those born of the fae. Before anyone else can see it he shoves into his pocket. He heard a loud boom from the entrance to the cave. He turns to see Pippa using the last bomb to clear the entrance to the cave, light flooding in.  Claude walks over to him. \“ You have a lot of explaining to do.\”",
+         choices : [
+             ["Restart?", "intro"]
+         ]
+
+     }
+    }
+    function makeButton(btnText, choice){
+        let button = document.createElement("button");
+        button.innerHTML = btnText;
+        buttonBody.appendChild(button);
+        button.addEventListener("click", function(){
+            history.push(choice);
+            showStory();
+        });
+    }
+    function buildStory(text) {
+            let storyItem = document.createElement("p");
+            storyItem.innerText = text;
+            storyBody.appendChild(storyItem);
+    }
+        function showStory(){
+            let currentPage = history[history.length - 1]; 
+            storyBody.innerHTML = ""; 
+            buttonBody.innerHTML = "";
+            
+            for(let page of history){ 
+                buildStory(story[page].text);
+            }
+            
+            for(let choice of story[currentPage].choices){
+                makeButton(choice[0], choice[1])
+            }
+        }
+        showStory();
+    </script>
+        
+    </body>
+    </html>
 
 
 
