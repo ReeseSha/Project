@@ -22,12 +22,13 @@
         
     <script>
     let storyBody = document.getElementById("story");
-    
+    //story body holds story
     let buttonBody = document.getElementById("buttons");
-  
+  //holds buttons
     let history = ["intro"];
 
     const story = {
+        //entire story and choices
         intro : {
          text : "He sits up and looks around. The man was on a beach surrounded by a lush rainforest, no other people in sight. The only sign of  human life was the ships off on the horizon. He lifts himself off the ground, his entire body feeling heavy. When he tries to walk, his legs give in making him look like a newborn deer. Strange, he thought and when he tries to lift himself up again his legs don\’t give out but are still threatening to buckle.",
          choices : [
@@ -243,38 +244,40 @@
 
      }
     }
-    function makeButton(btnText, choice){
-        let button = document.createElement("button");
-        button.innerHTML = btnText;
-        buttonBody.appendChild(button);
-        button.addEventListener("click", function(){
-            history.push(choice);
-            showStory();
+    function createButton(btnText, choice){
+        let button = document.createElement("button");//creates HTML element with the name "button"
+        button.innerHTML = btnText; //sets the property of the button
+        buttonBody.appendChild(button); //adds button body to the end of text
+        button.addEventListener("click", function(){ //when button is clicked it displays the story
+            history.push(choice); //adds choice to array
+            displayStory();
         });
     }
-    function buildStory(text) {
-            let storyItem = document.createElement("p");
-            storyItem.innerText = text;
-            storyBody.appendChild(storyItem);
+    function makeStory(text) {
+            let storyItem = document.createElement("p"); //created html element 'p'
+            storyItem.innerText = text; //returns text of story
+            storyBody.appendChild(storyItem); 
     }
-        function showStory(){
-            let currentPage = history[history.length - 1]; 
-            storyBody.innerHTML = ""; 
-            buttonBody.innerHTML = "";
+        function displayStory(){
+            let currentPage = history[history.length - 1]; //displays only one part of the story 
+            storyBody.innerHTML = ""; //text is inside of ""
+            buttonBody.innerHTML = ""; //button is inside of ""
             
             for(let page of history){ 
-                buildStory(story[page].text);
+                makeStory(story[page].text); 
             }
             
             for(let choice of story[currentPage].choices){
-                makeButton(choice[0], choice[1])
-            }
+                createButton(choice[0], choice[1]) //choices are stored
+            }S
         }
-        showStory();
+        displayStory();
+        //sourced from Mr.Fast
     </script>
         
     </body>
     </html>
+
 
 
 
