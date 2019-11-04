@@ -144,10 +144,16 @@
      },
      part26 : {
          //lie
-        text : "\'The key fell\' He says feeling his hands start to tremble. She scans his body for any signs of lying. When she could not find anything, she opens the door and turns to leave. \'Don\'t try anything funny",
+        text : "\'The key fell\' He says feeling his hands start to tremble. She scans his body for any signs of lying. When she could not find anything, she opens the door and turns to leave. \'Don\'t try anything funny\"",
         choices : [
-            ["next page", "part12"]
+            ["next page", "part38"]
         ]
+     },
+     part38 : {
+         text : "He is led to another room, full of cots and supplies. \"This is where you will sleep\", she glares one last time at him and turns away leaving the room.With that he is left alone. He sits down on the cot staring at the ceiling. He feels his eyes getting heavier until his hands find something in his pocket. A letter folder into a small square, he opens it finding an elegant cursive decorating it, reading,To my dear Avalon,If you are reading this something has happened to me. Find your father, he will help you. He is located in the kingdom of the Fae, once you are there tell him of my fate and he will give you refuge. You must find him for your safety, you are more important than you realize my child. I will always love you.Sincerely your mother, Ophelia.He reads this letter over and over and over until he has memorized the entire thing. Am I Avalon? Is this my mother? What happened to her? He thinks to himself. A Million other thoughts race through his brain, his eyes slowly shutting until he falls into a deep sleep.",
+         choices : [
+             ["Next page", "part11"]
+         ]
      },
      part8 : {
          //yes option for part 7
@@ -246,7 +252,7 @@
     }
     function createButton(btnText, choice){
         let button = document.createElement("button");//creates HTML element with the name "button"
-        button.innerHTML = btnText; //sets the property of the button
+        button.innerHTML = btnText;//sets the property of the button
         buttonBody.appendChild(button); //adds button body to the end of text
         button.addEventListener("click", function(){ //when button is clicked it displays the story
             history.push(choice); //adds choice to array
